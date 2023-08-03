@@ -1,15 +1,43 @@
 import React from "react";
 import { Form, Input, Button, Checkbox } from "antd";
 import styled from "styled-components";
+import axios from "axios";
 
-const SignupForm: React.FC<any> = () => {
+const SignupForm: React.FC<any> = ({ setIsLogin }) => {
   const handleSignup = async (values: any) => {
-    alert("TODO 요구사항에 맞추어 기능을 완성해주세요.");
+    const { email, password, confirmPassword, agreed } = values;
 
-    // TODO: 데이터베이스에서 email과 password 기반으로 찾아서 이미 존재하는지 확인 후, 존재하는 경우 "이미 존재하는 아이디입니다." alert
-    // TODO: 네트워크 등 기타 문제인 경우, "일시적인 오류가 발생하였습니다. 고객센터로 연락주세요." alert
-    // TODO: 성공 시(1), "회원가입이 성공적으로 처리되었습니다. 로그인 페이지로 이동합니다." alert
-    // TODO: 성공 시(2), "로그인할 수 있도록 세팅"
+    try {
+      // TODO: 데이터베이스에서 email과 password 기반으로 찾아서 이미 존재하는지 확인 후,
+      const response = await axios.get(
+        `http://localhost:4000/users?email=${email}&password=${password}`
+      );
+
+      // TODO: 존재하는 경우 "이미 존재하는 아이디입니다." alert
+      if (response.data.length >= 1) {
+        alert("이미 존재하는 아이디입니다");
+        return false;
+      } else {
+        // 회원가입 기능
+        await axios.post("http://localhost:4000/users", {
+          email,
+          password,
+        });
+
+        // TODO: 성공 시(1), "회원가입이 성공적으로 처리되었습니다. 로그인 페이지로 이동합니다." alert
+        alert(
+          "회원가입이 성공적으로 처리되었습니다. 로그인 페이지로 이동합니다."
+        );
+
+        // 로그인 페이지로 이동
+        // TODO: 성공 시(2), "로그인할 수 있도록 세팅"
+        setIsLogin(true);
+      }
+    } catch (error) {
+      // TODO: 네트워크 등 기타 문제인 경우, "일시적인 오류가 발생하였습니다. 고객센터로 연락주세요." alert
+      alert("일시적인 오류가 발생하였습니다. 고객센터로 연락주세요.");
+      return false;
+    }
   };
 
   return (

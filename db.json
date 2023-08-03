@@ -39,6 +39,16 @@
       "email": "asdf",
       "password": "123",
       "id": 8
+    },
+    {
+      "email": "asdf",
+      "password": "1234",
+      "id": 9
+    },
+    {
+      "email": "asdf",
+      "password": "12345",
+      "id": 10
     }
   ],
   "boards": [
@@ -95,6 +105,18 @@
       "contents": "asdfasdf",
       "isDeleted": false,
       "id": 9
+    },
+    {
+      "email": "asdf",
+      "contents": "gg",
+      "isDeleted": false,
+      "id": 10
+    },
+    {
+      "email": "asdf",
+      "contents": "ww",
+      "isDeleted": false,
+      "id": 11
     }
   ]
 }
