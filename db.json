@@ -39,16 +39,6 @@
       "email": "asdf",
       "password": "123",
       "id": 8
-    },
-    {
-      "email": "asdf",
-      "password": "1234",
-      "id": 9
-    },
-    {
-      "email": "asdf",
-      "password": "12345",
-      "id": 10
     }
   ],
   "boards": [
@@ -109,14 +99,57 @@
     {
       "email": "asdf",
       "contents": "gg",
-      "isDeleted": false,
+      "isDeleted": true,
       "id": 10
     },
     {
       "email": "asdf",
       "contents": "ww",
-      "isDeleted": false,
+      "isDeleted": true,
       "id": 11
+    },
+    {
+      "email": "asdf",
+      "contents": "wowwowwow",
+      "isDeleted": false,
+      "id": 12
+    }
+  ],
+  "comments": [
+    {
+      "boardId": "9",
+      "email": "asdf",
+      "contents": "gg",
+      "isDeleted": false,
+      "id": 3
+    },
+    {
+      "boardId": "9",
+      "email": "asdf",
+      "contents": "댓글 입력",
+      "isDeleted": false,
+      "id": 4
+    },
+    {
+      "boardId": "4",
+      "email": "asdf",
+      "contents": "ff",
+      "isDeleted": false,
+      "id": 5
+    },
+    {
+      "boardId": "4",
+      "email": "asdf",
+      "contents": "ss",
+      "isDeleted": false,
+      "id": 6
+    },
+    {
+      "boardId": "7",
+      "email": "asdf",
+      "contents": "ㄴㅇㄹㄴ",
+      "isDeleted": false,
+      "id": 7
     }
   ]
 }
